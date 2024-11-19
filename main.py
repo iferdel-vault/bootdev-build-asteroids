@@ -40,6 +40,11 @@ def main():
             if thing.collision(player):
                 print("Game Over")
                 return
+            for shot in shots:
+                if thing.collision(shot):
+                    thing.split()
+                    shot.kill()
+                    break
 
         screen.fill(color=(0, 0, 0))
         
